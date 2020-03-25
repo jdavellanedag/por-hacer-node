@@ -10,7 +10,7 @@ switch (comando) {
         console.log(tarea);
         break;
     case 'listar':
-        let listado = porHacer.getListado();
+        let listado = porHacer.getListado(argv.listado);
         for (let tarea of listado) {
             console.log('========Por Hacer========'.green);
             console.log(tarea.descripcion);

@@ -7,7 +7,14 @@ const descripcion = {
 const completado = {
     default: true,
     alias: 'c',
-    desc: 'Marca como completado o pendiente la tarea'
+    desc: 'Marca como completado o pendiente la tarea',
+    type: 'boolean'
+}
+
+const listado = {
+    alias: 'l',
+    desc: 'Filtra el resultado del listado por estado',
+    type: 'boolean'
 }
 
 const argv = require('yargs')
@@ -17,6 +24,9 @@ const argv = require('yargs')
     .command('actualizar', 'Actualizar un elemento a completado o pendiente', {
         descripcion,
         completado
+    })
+    .command('listar', 'Lista los elementos por hacer', {
+        listado
     })
     .command('borrar', 'Borra un elemento por hacer', {
         descripcion
